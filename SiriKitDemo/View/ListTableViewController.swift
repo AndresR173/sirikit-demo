@@ -60,7 +60,7 @@ extension ListTableViewController {
         }
     }
 
-    @objc private func addTask() {
+    @objc func addTask() {
         let viewController = TaskItemViewController()
         viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)

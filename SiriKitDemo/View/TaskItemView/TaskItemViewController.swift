@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IntentsUI
 
 protocol TaskItemDelegate: class {
     func didSaveTask(task: Task)
@@ -62,6 +63,7 @@ extension TaskItemViewController {
         } else {
             let task = Task(id: UUID(), title: customView.textView.text, isDone: false)
             delegate?.didSaveTask(task: task)
+            donateActivity()
         }
 
         navigationController?.popViewController(animated: true)
@@ -74,7 +76,37 @@ extension TaskItemViewController {
         } else {
             customView.label.text = "New Task"
         }
-
+        customView.shortcut.delegate = self
         navigationItem.rightBarButtonItem = saveButton
     }
+
+    private func donateActivity() {
+        let activity = ActivityHelper.getNewTaskActivity()
+
+        view.userActivity = activity
+        activity.becomeCurrent()
+    }
+}
+
+extension TaskItemViewController: INUIAddVoiceShortcutButtonDelegate {
+    func present(_ addVoiceShortcutViewController: INUIAddVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
+        addVoiceShortcutViewController.delegate = self
+        present(addVoiceShortcutViewController, animated: true)
+    }
+
+    func present(_ editVoiceShortcutViewController: INUIEditVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
+
+    }
+}
+
+extension TaskItemViewController: INUIAddVoiceShortcutViewControllerDelegate {
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+controller.dismiss(animated: true)
+    }
+
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        controller.dismiss(animated: true)
+    }
+
+
 }

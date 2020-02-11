@@ -21,6 +21,7 @@
 		BA6A307123D893BB00CBD6BF /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A307023D893BB00CBD6BF /* UserDefaults.swift */; };
 		BA6A307323D894AC00CBD6BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A307223D894AC00CBD6BF /* Constants.swift */; };
 		BA6A307523D896A300CBD6BF /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A307423D896A300CBD6BF /* ListPresenter.swift */; };
+		BA7814A023F2F80E00F5BA9B /* ActivityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78149F23F2F80E00F5BA9B /* ActivityHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BA6A307023D893BB00CBD6BF /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BA6A307223D894AC00CBD6BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA6A307423D896A300CBD6BF /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		BA78149F23F2F80E00F5BA9B /* ActivityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				BA1F4F1223D8E09D00E3A2D2 /* Extensions */,
 				BA6A307023D893BB00CBD6BF /* UserDefaults.swift */,
 				BA6A307223D894AC00CBD6BF /* Constants.swift */,
+				BA78149F23F2F80E00F5BA9B /* ActivityHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				BA1F4F1423D8E0C700E3A2D2 /* UIViewController+Extensions.swift in Sources */,
 				BA1F4F0E23D8E01800E3A2D2 /* TaskItemViewController.swift in Sources */,
 				BA6A306E23D892EE00CBD6BF /* DataProvider.swift in Sources */,
+				BA7814A023F2F80E00F5BA9B /* ActivityHelper.swift in Sources */,
 				BA6A305123D88CA500CBD6BF /* AppDelegate.swift in Sources */,
 				BA6A307323D894AC00CBD6BF /* Constants.swift in Sources */,
 			);
@@ -383,6 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47WD53H47N;
 				INFOPLIST_FILE = SiriKitDemo/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,6 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47WD53H47N;
 				INFOPLIST_FILE = SiriKitDemo/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

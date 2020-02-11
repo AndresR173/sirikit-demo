@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IntentsUI
 
 class TaskItemView: UIView {
 
@@ -34,6 +35,17 @@ class TaskItemView: UIView {
         return textView
     }()
 
+    lazy var shortcut: INUIAddVoiceShortcutButton = {
+        let activity = ActivityHelper.getNewTaskActivity()
+        let shortcut = INShortcut(userActivity: activity)
+
+        let button = INUIAddVoiceShortcutButton(style: .whiteOutline)
+        button.shortcut = shortcut
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
+
     // MARK: - Initializer
 
     override init(frame: CGRect) {
@@ -51,9 +63,14 @@ class TaskItemView: UIView {
     private func setupUI() {
         addSubview(label)
         addSubview(textView)
+        addSubview(shortcut)
 
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: readableContentGuide.topAnchor, constant: 8),
+
+            shortcut.topAnchor.constraint(equalTo: readableContentGuide.topAnchor, constant: 8),
+            shortcut.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            label.topAnchor.constraint(equalTo: shortcut.topAnchor, constant: 30),
             label.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             label.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
 
