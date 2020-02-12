@@ -11,8 +11,6 @@ import Foundation
 struct Constants {
     static let kTaskDefaultKey = "Task"
     static let kTaskItemCellIdentifier = "TaskItemCell"
-
     static let kNewTaskActivityType = "com.andresrojas.NewTask"
-
-    static let groupIdentifier = "group.com.andresrojas.SiriKitDemo"
+    static let kGroupIdentifier = "group.com.andresrojas.SiriKitDemo"
 }

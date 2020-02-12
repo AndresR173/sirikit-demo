@@ -12,17 +12,19 @@ import Foundation
 struct UserDefaultsWrapper<Value: Codable> {
     let key: String
     let defaultValue: Value
+    let userDefaults = UserDefaults(suiteName: Constants.kGroupIdentifier)
 
     var wrappedValue: Value {
         get {
-            let data = UserDefaults.standard.data(forKey: key)
+            let data = userDefaults?.data(forKey: key)
             let value = data.flatMap { try? JSONDecoder().decode(Value.self, from: $0) }
             return value ?? defaultValue
         }
 
         set {
             let data = try? JSONEncoder().encode(newValue)
-            UserDefaults.standard.set(data, forKey: key)
+            userDefaults?.set(data, forKey: key)
+            userDefaults?.synchronize()
         }
     }
 }

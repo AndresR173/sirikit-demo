@@ -57,7 +57,6 @@ class ListPresenter {
         } else {
             let index = dataProvider.tasks.count
             dataProvider.tasks.append(task)
-
             view?.didInsertNewTask(at: index)
         }
     }

@@ -64,6 +64,7 @@ extension TaskItemViewController {
             let task = Task(id: UUID(), title: customView.textView.text, isDone: false)
             delegate?.didSaveTask(task: task)
             donateActivity()
+            donateIntent()
         }
 
         navigationController?.popViewController(animated: true)
@@ -86,6 +87,12 @@ extension TaskItemViewController {
         view.userActivity = activity
         activity.becomeCurrent()
     }
+
+    private func donateIntent() {
+        let intent = AddTaskIntent()
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate(completion: nil)
+    }
 }
 
 extension TaskItemViewController: INUIAddVoiceShortcutButtonDelegate {
@@ -101,7 +108,7 @@ extension TaskItemViewController: INUIAddVoiceShortcutButtonDelegate {
 
 extension TaskItemViewController: INUIAddVoiceShortcutViewControllerDelegate {
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
-controller.dismiss(animated: true)
+        controller.dismiss(animated: true)
     }
 
     func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {

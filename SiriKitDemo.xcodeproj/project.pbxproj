@@ -26,8 +26,7 @@
 		BA7814AA23F34BAF00F5BA9B /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7814A923F34BAF00F5BA9B /* IntentHandler.swift */; };
 		BA7814AE23F34BAF00F5BA9B /* CreationalIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BA7814A723F34BAF00F5BA9B /* CreationalIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BA7814B323F34C1D00F5BA9B /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BA7814A123F3493100F5BA9B /* Intents.intentdefinition */; };
-		BA7814B723F3548000F5BA9B /* CreationalIntentsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7814B623F3548000F5BA9B /* CreationalIntentsHandler.swift */; };
-		BA7814B823F356CB00F5BA9B /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A307423D896A300CBD6BF /* ListPresenter.swift */; };
+		BA7814B723F3548000F5BA9B /* IntentsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7814B623F3548000F5BA9B /* IntentsHandler.swift */; };
 		BA7814B923F3571700F5BA9B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A306B23D892AB00CBD6BF /* Task.swift */; };
 		BA7814BA23F357F100F5BA9B /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A306D23D892EE00CBD6BF /* DataProvider.swift */; };
 		BA7814BB23F3580600F5BA9B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A307023D893BB00CBD6BF /* UserDefaults.swift */; };
@@ -82,7 +81,7 @@
 		BA7814AB23F34BAF00F5BA9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7814B423F34C6000F5BA9B /* SiriKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriKitDemo.entitlements; sourceTree = "<group>"; };
 		BA7814B523F34CC400F5BA9B /* CreationalIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreationalIntents.entitlements; sourceTree = "<group>"; };
-		BA7814B623F3548000F5BA9B /* CreationalIntentsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalIntentsHandler.swift; sourceTree = "<group>"; };
+		BA7814B623F3548000F5BA9B /* IntentsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		413B125623F36D62008ECFCF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BA6A306923D8926B00CBD6BF /* ListTableViewController.swift */,
+				BA1F4F0323D8A0FF00E3A2D2 /* TaskItemTableViewCell.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		BA1F4F0F23D8E02700E3A2D2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,8 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				BA1F4F1523D8E0E900E3A2D2 /* TaskItemView */,
-				BA6A306923D8926B00CBD6BF /* ListTableViewController.swift */,
-				BA1F4F0323D8A0FF00E3A2D2 /* TaskItemTableViewCell.swift */,
+				413B125623F36D62008ECFCF /* List */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,7 +231,7 @@
 				BA7814B523F34CC400F5BA9B /* CreationalIntents.entitlements */,
 				BA7814A923F34BAF00F5BA9B /* IntentHandler.swift */,
 				BA7814AB23F34BAF00F5BA9B /* Info.plist */,
-				BA7814B623F3548000F5BA9B /* CreationalIntentsHandler.swift */,
+				BA7814B623F3548000F5BA9B /* IntentsHandler.swift */,
 			);
 			path = CreationalIntents;
 			sourceTree = "<group>";
@@ -352,9 +359,8 @@
 			files = (
 				BA7814BA23F357F100F5BA9B /* DataProvider.swift in Sources */,
 				BA7814B323F34C1D00F5BA9B /* Intents.intentdefinition in Sources */,
-				BA7814B723F3548000F5BA9B /* CreationalIntentsHandler.swift in Sources */,
+				BA7814B723F3548000F5BA9B /* IntentsHandler.swift in Sources */,
 				BA7814B923F3571700F5BA9B /* Task.swift in Sources */,
-				BA7814B823F356CB00F5BA9B /* ListPresenter.swift in Sources */,
 				BA7814BB23F3580600F5BA9B /* UserDefaults.swift in Sources */,
 				BA7814AA23F34BAF00F5BA9B /* IntentHandler.swift in Sources */,
 				BA7814BC23F3581500F5BA9B /* Constants.swift in Sources */,

@@ -14,10 +14,10 @@ import MobileCoreServices
 class ActivityHelper {
     static func getNewTaskActivity() -> NSUserActivity {
         let activity = NSUserActivity(activityType: Constants.kNewTaskActivityType)
-        activity.title = "Add new task"
+        activity.title = "Add a task"
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
-        activity.suggestedInvocationPhrase = "New task"
+        activity.suggestedInvocationPhrase = "Let's create a task"
 
         let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
         attributes.contentDescription = "Let's add more tasks to do"

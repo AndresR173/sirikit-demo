@@ -8,11 +8,12 @@
 
 import UIKit
 import Intents
+import os
 
-class CreationalIntentsHandler: NSObject, AddTaskIntentHandling {
+class IntentsHandler: NSObject, AddTaskIntentHandling {
     func resolveTask(for intent: AddTaskIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
         guard let task = intent.task else {
-            completion(INStringResolutionResult.confirmationRequired(with: "Please enter your new task"))
+            completion(INStringResolutionResult.needsValue())
             return
         }
         completion(INStringResolutionResult.success(with: task))
@@ -24,13 +25,8 @@ class CreationalIntentsHandler: NSObject, AddTaskIntentHandling {
             return
         }
         let newTask = Task(id: UUID(), title: task, isDone: false)
-        ListPresenter().saveTask(newTask)
-        completion(AddTaskIntentResponse(code: .success, userActivity: nil))
+        let provider = DataProvider()
+        provider.tasks.append(newTask)
+        completion(AddTaskIntentResponse.success(task: task, amount: NSNumber(value: provider.tasks.count)))
     }
-
-    func confirm(intent: AddTaskIntent, completion: @escaping (AddTaskIntentResponse) -> Void) {
-        completion(AddTaskIntentResponse(code: .success, userActivity: nil))
-    }
-
-
 }
