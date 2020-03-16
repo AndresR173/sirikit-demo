@@ -1,2 +1,2 @@
 # sirikit-demo
-SiriKit and shortcuts demon
+SiriKit and shortcuts demo
